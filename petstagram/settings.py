@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-52v!01p)c)o3i!0(gw#uju-_7^&4t38ke@-7jjq_m6o29bs@4v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'petstagram-demo.herokuapp.com',
+]
 
 # Application definition
 
