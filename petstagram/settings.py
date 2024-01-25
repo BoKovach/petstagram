@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'petstagram-demo.herokuapp.com',
+    'petstagram-demo-80b11e283116.herokuapp.com',
 ]
 
 # Application definition
