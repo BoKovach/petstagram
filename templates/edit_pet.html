@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Pet Photo</title>
+    <style>
+        /* Стилове за навигационния бар */
+        .navbar {
+            padding: 10px;
+            background: aqua;
+        }
+
+        .navbar a {
+            margin-right: 10px;
+        }
+
+        /* Стилове за формата */
+        .form-container {
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-container select,
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .form-container textarea {
+            width: 100%;
+            height: 100px;
+            padding: 5px;
+        }
+
+        .form-container button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href=" {% url 'landing page' %}">Home</a>
+    <a href="{% url 'list pets' %}">All Pet Photos</a>
+    <a href="{% url 'create pet'%}">Add Pet Photos</a>
+    <a href="#">Login</a>
+    <a href="#">Sign Up</a>
+</div>
+
+<div class="form-container">
+    <h1 style="text-align: center; font-weight: bold;">Add new pet photo</h1>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form method="post" class="furniture-form" action="{% url 'edit pet' pet.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form }}
+                {{ pet }}
+                <button class="btn btn-primary mt-2" type="submit">Edit</button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+<script>
+    // Допълнителен JavaScript код може да бъде добавен тук, ако е необходимо
+</script>
+</body>
+</html>
