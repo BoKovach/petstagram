@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from cloudinary import models as cloudinary_models
 
 UserModel = get_user_model()
 
@@ -19,9 +20,10 @@ class Pet(models.Model):
     name = models.CharField(max_length=20)
     age = models.PositiveIntegerField()
     description = models.TextField()
-    image = models.ImageField(
-        upload_to='pets',
-    )
+    # image = models.ImageField(
+    #     upload_to='pets',
+    # )
+    image = cloudinary_models.CloudinaryField('image')
     user = models.ForeignKey(
         UserModel,
         on_delete=models.CASCADE,
